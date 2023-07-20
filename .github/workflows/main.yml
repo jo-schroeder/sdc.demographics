@@ -1,0 +1,12 @@
+on: [pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send repo to Dataverse 
+        uses: IQSS/dataverse-uploader@v1.4
+        with:
+          DATAVERSE_TOKEN: ${{secrets.DATAVERSE_TOKEN}}
+          DATAVERSE_SERVER: https://dataverse.lib.virginia.edu
+          DATAVERSE_DATASET_DOI: doi:10.18130/V3/QL1NKB
